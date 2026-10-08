@@ -1,0 +1,76 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Reservation day"
+    },
+    "time": {
+      "type": "string",
+      "description": "Slot start time, e.g. 20:00"
+    },
+    "guests": {
+      "type": "number",
+      "description": "Number of guests in the party"
+    },
+    "name": {
+      "type": "string",
+      "description": "Guest name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Guest email"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Guest phone"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Allergies, occasions, seating wishes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "cancelled"
+      ],
+      "default": "confirmed"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "online",
+        "staff"
+      ],
+      "default": "online"
+    }
+  },
+  "required": [
+    "date",
+    "time",
+    "guests",
+    "name",
+    "email"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

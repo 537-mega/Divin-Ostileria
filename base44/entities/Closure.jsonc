@@ -1,0 +1,41 @@
+{
+  "name": "Closure",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Day that is blocked"
+    },
+    "time": {
+      "type": "string",
+      "description": "Slot that is blocked, or \"all\" for the whole day"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Internal note, e.g. private event"
+    }
+  },
+  "required": [
+    "date",
+    "time"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

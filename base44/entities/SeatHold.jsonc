@@ -1,0 +1,42 @@
+{
+  "name": "SeatHold",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Day the seats are held for"
+    },
+    "time": {
+      "type": "string",
+      "description": "Slot the seats are held for, e.g. 20:00"
+    },
+    "seats": {
+      "type": "number",
+      "description": "Number of seats held \u2014 no guest details are stored here"
+    },
+    "booking_id": {
+      "type": "string",
+      "description": "Id of the matching Booking record"
+    }
+  },
+  "required": [
+    "date",
+    "time",
+    "seats"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
