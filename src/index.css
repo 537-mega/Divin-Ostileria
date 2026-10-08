@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 32 100% 97%;
+    --foreground: 15 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 15 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 20% 12%;
+    --primary: 345 100% 25%;
+    --primary-foreground: 32 100% 97%;
+    --secondary: 34 55% 89%;
+    --secondary-foreground: 15 20% 14%;
+    --muted: 34 45% 92%;
+    --muted-foreground: 20 12% 36%;
+    --accent: 353 61% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 30% 85%;
+    --input: 30 30% 85%;
+    --ring: 353 61% 57%;
+    --chart-1: 345 100% 25%;
+    --chart-2: 353 61% 57%;
+    --chart-3: 34 55% 66%;
+    --chart-4: 20 30% 40%;
+    --chart-5: 15 20% 20%;
+    --radius: 0.375rem;
+    --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --sidebar-background: 32 100% 97%;
+    --sidebar-foreground: 15 20% 12%;
+    --sidebar-primary: 345 100% 25%;
+    --sidebar-primary-foreground: 32 100% 97%;
+    --sidebar-accent: 34 55% 89%;
+    --sidebar-accent-foreground: 15 20% 12%;
+    --sidebar-border: 30 30% 85%;
+    --sidebar-ring: 353 61% 57%;
+  }
+
+  .dark {
+    --background: 15 18% 8%;
+    --foreground: 32 60% 95%;
+    --card: 15 16% 11%;
+    --card-foreground: 32 60% 95%;
+    --popover: 15 16% 11%;
+    --popover-foreground: 32 60% 95%;
+    --primary: 353 61% 57%;
+    --primary-foreground: 15 18% 8%;
+    --secondary: 15 14% 17%;
+    --secondary-foreground: 32 60% 95%;
+    --muted: 15 14% 17%;
+    --muted-foreground: 32 20% 70%;
+    --accent: 353 61% 57%;
+    --accent-foreground: 15 18% 8%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 32 60% 95%;
+    --border: 15 14% 20%;
+    --input: 15 14% 20%;
+    --ring: 353 61% 57%;
+    --sidebar-background: 15 16% 11%;
+    --sidebar-foreground: 32 60% 95%;
+    --sidebar-primary: 353 61% 57%;
+    --sidebar-primary-foreground: 15 18% 8%;
+    --sidebar-accent: 15 14% 17%;
+    --sidebar-accent-foreground: 32 60% 95%;
+    --sidebar-border: 15 14% 20%;
+    --sidebar-ring: 353 61% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-body text-[0.6875rem] uppercase tracking-[0.28em] text-accent;
+  }
+
+  .display {
+    @apply font-display font-light leading-[1.06] tracking-[-0.01em];
+  }
+
+  .rule {
+    @apply h-px w-16 bg-border;
+  }
+}
